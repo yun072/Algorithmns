@@ -2,33 +2,33 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-       Scanner sc = new Scanner(System.in);
-       int number = sc.nextInt();
-       int floor = 1; // 몇 번째 층?  
+       Scanner scan = new Scanner(System.in);
+       int num = scan.nextInt();
+       int g = 0; // 몇 번째 그룹?  
        
        // 층 수
-       while(number-floor > 0) {
-          number -= floor;
-         floor++;
+       while(num-g > 0) {
+          num -= g;
+          g++;
        }
        
-       int box = number; // 몇 번째 박스?
-       int hap = floor+1; // 분모와 분자의 합
-       int a=0; // 분모
-       int b=0; // 분자
+       int box = num; // 몇 번째 칸?
+       int sum = g+1; // 분모와 분자의 합
+       int m=0; // 분모
+       int c=0; // 분자
        
        // 홀수층
-       if(floor%2==1) {
-          a = box;
-          b = hap-box;
+       if(g%2==1) {
+          m = box;
+          c = sum-box;
        }
        
        //짝수층
-       if(floor%2==0) {
-          b = box;
-          a = hap - box;
+       if(g%2==0) {
+          m = box;
+          c = sum - box;
        }
        
-       System.out.println(b +"/" + a);
+       System.out.println(c +"/" + m);
     } 
 }
