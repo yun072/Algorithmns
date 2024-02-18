@@ -25,8 +25,8 @@ public class Main {
        
        //짝수층
        if(g%2==0) {
-          m = box;
-          c = sum - box;
+          c = box;
+          m = sum - box;
        }
        
        System.out.println(c +"/" + m);
